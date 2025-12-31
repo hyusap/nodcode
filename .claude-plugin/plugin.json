@@ -1,0 +1,27 @@
+{
+  "name": "nodcode",
+  "description": "Hands-free yes/no interactions for Claude Code using AirPods head gestures via bobble",
+  "version": "1.0.0",
+  "author": {
+    "name": "hyusap",
+    "url": "https://github.com/hyusap"
+  },
+  "homepage": "https://github.com/hyusap/nodcode",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hyusap/nodcode.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "airpods",
+    "gestures",
+    "accessibility",
+    "hands-free",
+    "permissions",
+    "bobble"
+  ],
+  "requirements": {
+    "platform": ["darwin"],
+    "minVersion": "1.0.33"
+  }
+}
