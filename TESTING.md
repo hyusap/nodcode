@@ -25,18 +25,19 @@ Start Claude Code with the plugin loaded:
 claude --plugin-dir /Users/ayush/dev/nodcode
 ```
 
-### 2. Test the check command
+### 2. Test the setup command
 
 Once Claude Code starts, run:
 
 ```bash
-/nodcode:check
+/nodcode:setup
 ```
 
-This should verify that:
-- bobble is installed
-- Your AirPods are available (if connected)
-- The plugin is loaded correctly
+This should:
+- Check if bobble is installed (offer to install if not)
+- Verify your AirPods are available (if connected)
+- Optionally test gesture detection
+- Confirm the plugin is loaded correctly
 
 ### 3. Test the permission hook
 

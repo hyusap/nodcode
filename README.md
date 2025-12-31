@@ -19,6 +19,28 @@ When Claude Code asks for permission, nodcode:
 4. ✓ Approves on nod, denies on shake
 5. 🔄 Falls back to normal UI if no gesture detected
 
+## Quick Start
+
+**Terminal setup (copy and paste):**
+
+```bash
+# Install bobble via Homebrew
+brew install hyusap/tap/bobble
+
+# Start Claude Code (in your project directory)
+claude
+```
+
+**In Claude Code chat:**
+
+```
+/plugin marketplace add hyusap/cc
+/plugin install nodcode@hyusap
+/nodcode:setup
+```
+
+Put on your AirPods and you're ready! Nod for yes, shake for no.
+
 ## Requirements
 
 - **macOS**: 14.0 or later
@@ -28,29 +50,20 @@ When Claude Code asks for permission, nodcode:
 
 ## Installation
 
-### Step 1: Install bobble
+### Step 1: Add the marketplace
 
-nodcode requires [bobble](https://github.com/hyusap/bobble), a CLI tool for detecting head gestures:
-
-```bash
-brew install hyusap/tap/bobble
-```
-
-Verify the installation:
+Add Ayush's plugin marketplace to Claude Code:
 
 ```bash
-bobble --version
+/plugin marketplace add hyusap/cc
 ```
 
 ### Step 2: Install nodcode plugin
 
-**Option A: From a marketplace** (recommended when available)
-
-If nodcode is published to a Claude Code plugin marketplace:
+**Option A: From the marketplace** (recommended)
 
 ```bash
-# In Claude Code
-/plugin install nodcode
+/plugin install nodcode@hyusap
 ```
 
 **Option B: Local installation** (for development/testing)
@@ -62,18 +75,25 @@ git clone https://github.com/hyusap/nodcode.git
 claude --plugin-dir ./nodcode
 ```
 
-### Step 3: Verify setup
+### Step 3: Run setup
 
-Once installed, run the check command in Claude Code:
+Once the plugin is loaded, run the setup command in Claude Code:
 
 ```bash
-/nodcode:check
+/nodcode:setup
 ```
 
-This will verify that:
-- bobble is installed
-- Your AirPods are connected and available
-- Gesture detection is working
+This interactive setup will:
+- Check if bobble is installed (and offer to install it via Homebrew if not)
+- Verify your AirPods are connected and available
+- Test gesture detection
+- Confirm everything is working
+
+**Manual bobble installation** (if you prefer):
+
+```bash
+brew install hyusap/tap/bobble
+```
 
 ## Usage
 
@@ -89,7 +109,7 @@ Once installed, nodcode automatically handles permission requests:
 
 ### Slash Commands
 
-- `/nodcode:check` - Check if bobble is installed and AirPods are available
+- `/nodcode:setup` - Interactive setup to install bobble and verify AirPods configuration
 
 ## How It Works
 

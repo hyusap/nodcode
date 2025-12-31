@@ -15,6 +15,7 @@ BOBBLE="bobble"
 
 # Check if bobble is installed
 if ! command -v bobble &> /dev/null; then
+    say "please install bobble. run slash nod code colon setup to do so."
     echo "Error: bobble not found. Install it with: brew install hyusap/tap/bobble" >&2
     exit 1
 fi
@@ -40,7 +41,12 @@ case "$TOOL_NAME" in
     "Bash")
         COMMAND=$(echo "$TOOL_INPUT" | python3 -c "import sys, json; print(json.load(sys.stdin).get('command', ''))" 2>/dev/null || echo "")
         if [ -n "$COMMAND" ]; then
-            PERMISSION_MESSAGE="Claude wants to run a command."
+            # Truncate long commands for voice readability
+            COMMAND_SHORT=$(echo "$COMMAND" | head -c 80)
+            if [ ${#COMMAND} -gt 80 ]; then
+                COMMAND_SHORT="${COMMAND_SHORT}..."
+            fi
+            PERMISSION_MESSAGE="Claude wants to run: $COMMAND_SHORT"
         fi
         ;;
     "Write"|"Edit")
@@ -58,8 +64,6 @@ esac
 # Speak the permission request using system default voice
 say "$PERMISSION_MESSAGE Nod for yes, shake for no."
 
-# Small pause before listening for gesture
-sleep 0.5
 
 # Use bobble to get response
 "$BOBBLE" --timeout 15 --sensitivity 0.5

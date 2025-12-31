@@ -7,10 +7,7 @@
     "url": "https://github.com/hyusap"
   },
   "homepage": "https://github.com/hyusap/nodcode",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hyusap/nodcode.git"
-  },
+  "repository": "https://github.com/hyusap/nodcode.git",
   "license": "MIT",
   "keywords": [
     "airpods",
@@ -19,9 +16,5 @@
     "hands-free",
     "permissions",
     "bobble"
-  ],
-  "requirements": {
-    "platform": ["darwin"],
-    "minVersion": "1.0.33"
-  }
+  ]
 }

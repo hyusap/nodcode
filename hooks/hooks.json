@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$PLUGIN_DIR/hooks/permission-with-gesture.sh",
+            "command": "${CLAUDE_PLUGIN_ROOT}/hooks/permission-with-gesture.sh",
             "timeout": 30
           }
         ]
