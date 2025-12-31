@@ -1,8 +1,8 @@
-# nodcode
+# Nod Code for Claude Code
 
 > Hands-free yes/no interactions for Claude Code using AirPods head gestures
 
-**nodcode** is a Claude Code plugin that enables gesture-based permission requests. When Claude asks for permission to run commands, edit files, or perform tasks, you can simply nod (yes) or shake (no) your head instead of clicking buttons.
+**Nod Code** is a Claude Code plugin that enables gesture-based permission requests. When Claude asks for permission to run commands, edit files, or perform tasks, you can simply nod (yes) or shake (no) your head instead of clicking buttons.
 
 Perfect for:
 - Hands-free coding sessions
@@ -26,7 +26,7 @@ When Claude Code asks for permission, nodcode:
 ```bash
 brew install hyusap/tap/bobble
 claude plugin marketplace add hyusap/cc
-claude plugin install nodcode@hyusap
+claude plugin install nodcode
 claude
 ```
 
