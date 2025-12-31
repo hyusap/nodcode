@@ -24,10 +24,9 @@ When Claude Code asks for permission, nodcode:
 **Terminal setup (copy and paste):**
 
 ```bash
-# Install bobble via Homebrew
 brew install hyusap/tap/bobble
-
-# Start Claude Code (in your project directory)
+claude plugin marketplace add hyusap/cc
+claude plugin install nodcode@hyusap
 claude
 ```
 
