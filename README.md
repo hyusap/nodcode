@@ -112,20 +112,13 @@ Once installed, nodcode automatically handles permission requests:
 
 ## How It Works
 
-nodcode is a Claude Code [PermissionRequest hook](https://code.claude.com/docs/hooks) that integrates with bobble:
+nodcode is a Claude Code [PermissionRequest hook](https://code.claude.com/docs/en/hooks-guide) that integrates with bobble:
 
 1. **Hook triggers** when Claude needs permission for a tool (Bash, Write, Edit, Task, etc.)
 2. **Availability check** - Uses `bobble --check` to verify AirPods are connected (8ms)
 3. **Voice prompt** - Speaks the request using macOS `say` command
 4. **Gesture detection** - Runs `bobble --timeout 15 --sensitivity 0.5`
 5. **Response** - Returns JSON decision to Claude Code based on gesture
-
-### Exit codes from bobble
-
-- `0` - Nod detected → Permission granted
-- `1` - Shake detected → Permission denied
-- `2` - Timeout → Fall back to UI
-- `3` - Error/No AirPods → Fall back to UI
 
 ### Gesture Thresholds
 
@@ -199,23 +192,6 @@ nodcode/
 ├── README.md
 └── LICENSE
 ```
-
-### Testing Locally
-
-```bash
-# Load the plugin in Claude Code
-claude --plugin-dir /path/to/nodcode
-
-# Run the check command
-/nodcode:check
-
-# Trigger a permission request to test the hook
-/bash ls
-```
-
-### Building a Marketplace
-
-To distribute nodcode via a Claude Code marketplace, see [Create and distribute a plugin marketplace](https://code.claude.com/docs/plugin-marketplaces).
 
 ## Related Projects
 
